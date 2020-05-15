@@ -13,9 +13,7 @@ export class ColorsService {
   constructor(public http: HttpClient) { }
 
   readColors(pp): Observable<Colors[]>{
-    //console.log("ruta-> " + this.ruta + pp);
     return this.http.get<Colors[]>(this.ruta + pp);
-    //return this.http.get<Colors[]>(this.ruta);
   }
 
 }

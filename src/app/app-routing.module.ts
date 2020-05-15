@@ -5,7 +5,8 @@ import { PageErrorComponent } from './page-error/page-error.component';
 
 const routes: Routes = [
   {path: '', component: VercoloresComponent },
-  {path: '**', component: PageErrorComponent }
+  {path: '**', redirectTo: ''}
+  //{path: '**', component: PageErrorComponent }
 ];
 
 @NgModule({

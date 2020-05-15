@@ -1,22 +1,21 @@
 <div class="container mt-2">
+    
+    <img [src]="loading" *ngIf="show_load">
 
     <mat-paginator showFirstLastButtons [length]="allColors.length" [pageSize]="page_size" [pageSizeOptions]="pageSizeOptions" (page)="handlePage($event)">
     </mat-paginator>
 
-    <div class="row">
-        <div class="col-12 col-sm-3 col-md-3 mb-1" *ngFor="let c of allColors | customPaginate:page_size:page_number; let p = index">
-            <div class="card text-center">
+    <div class="row" *ngIf="allColors">
+        <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 mb-1" *ngFor="let c of allColors | customPaginate:page_size:page_number; let p = index">
+            <div class="card text-center set_height" (click)="copyColor(c.color)" data-toggle="modal" [attr.data-target]="'#c_'+p">
                 <div class="card-header">
-                    <span class="float-left">{{c.year}}</span>
+                    <span class="float-left ">{{c.year}}</span>
                 </div>
                 <div class="card-body">
-                    <p class="card-title">{{c.name}}</p>
+                    <h1 class="card-title">{{c.name | titlecase }}</h1>
                     <p class="card-text">{{c.color}}</p>
-                    <button (click)="copyColor(c.color)" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#c_'+p">
-                        Copiar Color al Portapapeles
-                    </button>
                 </div>
-                <div class="card-footer" [style.background-color]="c.color">
+                <div class="card-body" [style.background-color]="c.color">
                     <span class="float-right">{{c.pantone_value}}</span>
                 </div>
             </div>
