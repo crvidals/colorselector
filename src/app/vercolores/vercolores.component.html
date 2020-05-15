@@ -13,7 +13,7 @@
                     <p class="card-title">{{c.name}}</p>
                     <p class="card-text">{{c.color}}</p>
                     <button (click)="copyColor(c.color)" class="btn btn-primary" data-toggle="modal" [attr.data-target]="'#c_'+p">
-                        Copiar Color al Portapapeles
+                        Copiar Color
                     </button>
                 </div>
                 <div class="card-footer" [style.background-color]="c.color">
