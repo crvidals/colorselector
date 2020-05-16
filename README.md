@@ -49,11 +49,6 @@ Cada cuadro de la grid:
 -   tslib                               1.10.0
 -   zone.js                             0.10.2
 
-Breve introducción a la aplicación
-Listado de las tecnologías o frameworks utilizados
-Cómo instalar las dependencias y correr el proyecto
-URL a producción en caso de haber sido subido
-
 # Instalación
 
 Todo el desarrollo de este proyecto fue realizado en Ubuntu 18.04.4 LTS.
