@@ -21,15 +21,17 @@ export class VercoloresComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.ClrIny.readColors(1).subscribe((tps)=>{
-      this.cantPags = tps['total_pages'];
-      for (let i = 1; i <= this.cantPags; i++){
-        this.ClrIny.readColors(i).subscribe((clrs)=>{
-          this.allColors = this.allColors.concat(clrs['data']);
-        });
-      }
-    });
-    this.show_load = false;
+    setTimeout(()=>{
+      this.ClrIny.readColors(1).subscribe((tps)=>{
+        this.cantPags = tps['total_pages'];
+        for (let i = 1; i <= this.cantPags; i++){
+          this.ClrIny.readColors(i).subscribe((clrs)=>{
+            this.allColors = this.allColors.concat(clrs['data']);
+          });
+        }
+      });
+      this.show_load = false;
+    }, 500);
   }
 
   page_size: number = 8;
