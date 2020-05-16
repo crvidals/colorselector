@@ -9,9 +9,9 @@
     
         <div class="row" *ngIf="allColors">
             <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12 mb-1" *ngFor="let c of allColors | customPaginate:page_size:page_number; let p = index" data-toggle="tooltip" title="Click para copiar color.">
-                <div class="card text-center set_height" (click)="copyColor(c.color)" data-toggle="modal" [attr.data-target]="'#c_'+p">
+                <div class="card text-center set_height" (click)="copyColor(c.color)" data-toggle="modal" [attr.data-target]="'#c_'+p" [style.border-color]="c.color">
                     <div class="card-header">
-                        <span class="float-left ">{{c.year}}</span>
+                        <span class="float-left">{{c.year}}</span>
                     </div>
                     <div class="card-body">
                         <h1 class="card-title">{{c.name | titlecase }}</h1>
@@ -25,7 +25,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h6 class="modal-title" id="eml">{{c.year}}</h6>
+                                <span class="modal-title" id="eml">{{c.year}}</span>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
