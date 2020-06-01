@@ -52,8 +52,8 @@ Cada cuadro de la grid:
 # Instalación
 
 Todo el desarrollo de este proyecto fue realizado en Ubuntu 18.04.4 LTS.
-
-Instalar Angular
+```sh
+# Instalar Angular
 -   sudo apt update
 -   sudo apt install nodejs
 -   sudo apt install npm
